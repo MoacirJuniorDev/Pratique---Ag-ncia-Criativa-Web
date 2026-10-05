@@ -1,0 +1,258 @@
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+// Header & Menu Nav
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+    background-color: $white;
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+
+    &__container {
+        @include flex-center;
+        height: 100%;
+    }
+
+    &__logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $dark-color;
+        text-decoration: none;
+
+        span {
+            color: $primary-color;
+        }
+    }
+
+    &__menu-toggle {
+        display: none;
+    }
+
+    &__hamburger {
+        display: none;
+    }
+}
+
+.nav {
+    &__list {
+        @include flex-center(row, flex-end, center);
+        gap: 2rem;
+        list-style: none;
+    }
+
+    &__link {
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: inherit;
+        @include transition-smooth(color);
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+// Seção Hero
+.hero {
+    min-height: 100vh;
+    padding-top: $header-height;
+    @include flex-center(row, center, center);
+    background: linear-gradient(135deg, rgba($primary-color, 0.1) 0%, rgba($secondary-color, 0.2) 100%);
+    text-align: center;
+
+    &__content {
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 2.8rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.2;
+
+        &--highlight {
+            color: $primary-color;
+        }
+    }
+
+    &__description {
+        font-size: 1.15rem;
+        color: $text-color;
+        max-width: 40rem;
+        margin: 0 auto 2rem;
+    }
+}
+
+// Seções Genéricas (Sobre, Serviços, Depoimentos, Contato)
+.sobre, .services, .testimonials, .contact {
+    padding: $base-spacing 0;
+}
+
+.sobre {
+    background-color: $white;
+
+    &__container {
+        @include flex-center;
+        gap: 3rem;
+    }
+
+    &__content {
+        flex: 1;
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: $dark-color;
+    }
+
+    &__text {
+        color: $text-color;
+        margin-bottom: 1rem;
+    }
+
+    &__media {
+        flex: 1;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.services {
+    background-color: $light-color;
+
+    &__title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: calc($base-spacing / 2); // Operador matemático proporcional
+        color: $dark-color;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 2rem;
+    }
+}
+
+.testimonials {
+    background-color: $white;
+
+    &__title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: calc($base-spacing / 2);
+        color: $dark-color;
+    }
+
+    &__container {
+        @include flex-center(row, flex-start, stretch);
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+}
+
+.contact {
+    background-color: $light-color;
+
+    &__container {
+        @include flex-center(row, space-between, flex-start);
+        gap: 3rem;
+    }
+
+    &__info {
+        flex: 1;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+        color: $dark-color;
+    }
+
+    &__description {
+        color: $text-color;
+    }
+
+    &__list {
+        margin-top: 1.5rem;
+        list-style: none;
+    }
+
+    &__item {
+        margin-bottom: 0.8rem;
+        color: $text-color;
+    }
+}
+
+// Footer
+.footer {
+    background-color: $dark-color;
+    color: $white;
+    text-align: center;
+    padding: calc($base-spacing / 3.3);
+    font-size: 0.9rem;
+
+    &__text {
+        color: $white;
+    }
+}
+
+// Responsividade unificada via Mixin BEM
+@include mobile {
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .sobre__container,
+    .contact__container {
+        flex-direction: column;
+    }
+
+    .header__hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 1.8rem;
+        height: 1.3rem;
+        cursor: pointer;
+        z-index: 1001;
+
+        span {
+            height: 0.2rem;
+            width: 100%;
+            background-color: $dark-color;
+            border-radius: 0.1rem;
+        }
+    }
+
+    .nav {
+        position: absolute;
+        top: $header-height;
+        left: 0;
+        width: 100%;
+        background-color: $white;
+        box-shadow: 0 0.625rem 0.625rem rgba(0, 0, 0, 0.05);
+        display: none;
+
+        &__list {
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 0;
+            gap: 1.5rem;
+        }
+    }
+
+    .header__menu-toggle:checked ~ .nav {
+        display: block;
+    }
+}

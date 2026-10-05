@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência Criativa Web | Design & Desenvolvimento</title>
+    <!-- Linha atualizada para ler o CSS compilado pelo SASS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Fonte Google Fonts para design moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Bloco: Header -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="#home" class="header__logo">Criativa<span>Web</span></a>
+            <input type="checkbox" id="menu-toggle" class="header__menu-toggle">
+            <label for="menu-toggle" class="header__hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#sobre">Sobre Nós</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#servicos">Serviços</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#depoimentos">Depoimentos</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Bloco: Hero -->
+        <section id="home" class="hero">
+            <div class="container hero__content">
+                <h1 class="hero__title">Transformamos ideias em <span class="hero__title--highlight">experiências digitais</span> incríveis.</h1>
+                <p class="hero__description">Agência especializada em web design, branding e estratégias digitais de alto impacto visual e funcional.</p>
+                <a href="#contato" class="btn btn--primary">Fale Conosco</a>
+            </div>
+        </section>
+
+        <!-- Bloco: Sobre -->
+        <section id="sobre" class="sobre">
+            <div class="container sobre__container">
+                <div class="sobre__content">
+                    <h2 class="sobre__title">Sobre Nós</h2>
+                    <p class="sobre__text">A <strong>Agência Criativa Web</strong> é apaixonada por inovação. Desenvolvemos soluções visuais e digitais sob medida para empresas que buscam se destacar no mercado.</p>
+                    <p class="sobre__text">Nossos pilares são criatividade, funcionalidade, foco nas pessoas e entrega de resultados que impulsionam o seu negócio.</p>
+                </div>
+                <div class="sobre__media">
+                    <img srcset="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400 400w,
+                                 https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800 800w"
+                         sizes="(max-width: 768px) 100vw, 50vw"
+                         src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" 
+                         alt="Equipe trabalhando na Agência Criativa Web" 
+                         class="sobre__image"
+                         loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloco: Serviços -->
+        <section id="servicos" class="services">
+            <div class="container">
+                <h2 class="services__title">Nossos Serviços</h2>
+                <div class="services__grid">
+                    <!-- Componente: Card de Serviço -->
+                    <div class="service-card">
+                        <div class="service-card__icon">🎨</div>
+                        <h3 class="service-card__title">Design Gráfico</h3>
+                        <p class="service-card__description">Criação de identidades visuais marcantes, materiais promocionais e peças para redes sociais.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card__icon">💻</div>
+                        <h3 class="service-card__title">Desenvolvimento Web</h3>
+                        <p class="service-card__description">Sites, landing pages e e-commerces rápidos, responsivos e otimizados para motores de busca (SEO).</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card__icon">🚀</div>
+                        <h3 class="service-card__title">Branding</h3>
+                        <p class="service-card__description">Construção e posição de marcas fortes com personalidade e propósito bem definidos.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card__icon">📱</div>
+                        <h3 class="service-card__title">UI/UX Design</h3>
+                        <p class="service-card__description">Projetos de interfaces intuitivas e focadas na melhor experiência do usuário em plataformas digitais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloco: Depoimentos -->
+        <section id="depoimentos" class="testimonials">
+            <div class="container">
+                <h2 class="testimonials__title">O que dizem nossos clientes</h2>
+                <div class="testimonials__container">
+                    <!-- Componente: Card de Depoimento -->
+                    <article class="testimonial-card">
+                        <p class="testimonial-card__text">"A Criativa Web transformou totalmente a presença online da nossa empresa. O novo site aumentou nossas vendas!"</p>
+                        <h4 class="testimonial-card__author">— Ana Souza, CEO da TechInova</h4>
+                    </article>
+                    <article class="testimonial-card">
+                        <p class="testimonial-card__text">"Trabalho impecável na reconstrução da nossa identidade visual. A equipe é rápida, atenciosa e altamente profissional."</p>
+                        <h4 class="testimonial-card__author">— Carlos Eduardo, Diretor de Marketing</h4>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloco: Contato -->
+        <section id="contato" class="contact">
+            <div class="container contact__container">
+                <div class="contact__info">
+                    <h2 class="contact__title">Entre em Contato</h2>
+                    <p class="contact__description">Vamos conversar sobre o seu próximo projeto digital?</p>
+                    <ul class="contact__list">
+                        <li class="contact__item">📍 <strong>Endereço:</strong> Av. Paulista, 1000 - São Paulo, SP</li>
+                        <li class="contact__item">📞 <strong>Telefone:</strong> (11) 99999-8888</li>
+                        <li class="contact__item">✉️ <strong>E-mail:</strong> contato@criativaweb.com.br</li>
+                    </ul>
+                </div>
+                <!-- Componente: Form -->
+                <form class="form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+                    <div class="form__group">
+                        <label class="form__label" for="nome">Nome</label>
+                        <input class="form__input" type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="email">E-mail</label>
+                        <input class="form__input" type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="mensagem">Mensagem</label>
+                        <textarea class="form__input form__input--textarea" id="mensagem" name="mensagem" rows="5" placeholder="Como podemos te ajudar?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bloco: Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">&copy; 2026 Agência Criativa Web. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

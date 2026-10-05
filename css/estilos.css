@@ -1,0 +1,356 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #2d3436;
+  background-color: #f8f9fa;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn--primary {
+  background-color: #6c5ce7;
+  color: #ffffff;
+}
+.btn--primary:hover {
+  background-color: rgb(26.6310160428%, 18.6452762923%, 88.0213903743%);
+  transform: translateY(-3px);
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-0.3125rem);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+}
+.service-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.service-card__title {
+  margin-bottom: 0.8rem;
+  color: #2d3436;
+}
+.service-card__description {
+  color: #636e72;
+  font-size: 0.95rem;
+}
+
+.testimonial-card {
+  flex: 1 1 18.75rem;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-left: 0.25rem solid #6c5ce7;
+  border-radius: 0.25rem;
+}
+.testimonial-card__text {
+  font-style: italic;
+  color: #636e72;
+  margin-bottom: 1rem;
+}
+.testimonial-card__author {
+  color: #2d3436;
+  font-weight: 600;
+}
+
+.form {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+.form__group {
+  margin-bottom: 1.2rem;
+}
+.form__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #2d3436;
+}
+.form__input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 0.0625rem solid #ddd;
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.form__input:focus {
+  outline: none;
+  border-color: #6c5ce7;
+}
+.form__input--textarea {
+  resize: vertical;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3436;
+  text-decoration: none;
+}
+.header__logo span {
+  color: #6c5ce7;
+}
+.header__menu-toggle {
+  display: none;
+}
+.header__hamburger {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav__link {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+.nav__link:hover {
+  color: #6c5ce7;
+}
+
+.hero {
+  min-height: 100vh;
+  padding-top: 4.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.1) 0%, rgba(162, 155, 254, 0.2) 100%);
+  text-align: center;
+}
+.hero__content {
+  width: 100%;
+}
+.hero__title {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+.hero__title--highlight {
+  color: #6c5ce7;
+}
+.hero__description {
+  font-size: 1.15rem;
+  color: #636e72;
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+}
+
+.sobre, .services, .testimonials, .contact {
+  padding: 5rem 0;
+}
+
+.sobre {
+  background-color: #ffffff;
+}
+.sobre__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+.sobre__content {
+  flex: 1;
+}
+.sobre__title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2d3436;
+}
+.sobre__text {
+  color: #636e72;
+  margin-bottom: 1rem;
+}
+.sobre__media {
+  flex: 1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+}
+.sobre__image {
+  width: 100%;
+  height: auto;
+}
+
+.services {
+  background-color: #f8f9fa;
+}
+.services__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #2d3436;
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+
+.testimonials {
+  background-color: #ffffff;
+}
+.testimonials__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #2d3436;
+}
+.testimonials__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact {
+  background-color: #f8f9fa;
+}
+.contact__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+.contact__info {
+  flex: 1;
+}
+.contact__title {
+  margin-bottom: 1rem;
+  color: #2d3436;
+}
+.contact__description {
+  color: #636e72;
+}
+.contact__list {
+  margin-top: 1.5rem;
+  list-style: none;
+}
+.contact__item {
+  margin-bottom: 0.8rem;
+  color: #636e72;
+}
+
+.footer {
+  background-color: #2d3436;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5151515152rem;
+  font-size: 0.9rem;
+}
+.footer__text {
+  color: #ffffff;
+}
+
+@media (max-width: 48rem) {
+  .hero__title {
+    font-size: 2rem;
+  }
+  .sobre__container,
+  .contact__container {
+    flex-direction: column;
+  }
+  .header__hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.8rem;
+    height: 1.3rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .header__hamburger span {
+    height: 0.2rem;
+    width: 100%;
+    background-color: #2d3436;
+    border-radius: 0.1rem;
+  }
+  .nav {
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0.625rem 0.625rem rgba(0, 0, 0, 0.05);
+    display: none;
+  }
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+  .header__menu-toggle:checked ~ .nav {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */

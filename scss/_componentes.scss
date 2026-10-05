@@ -1,0 +1,121 @@
+@use "sass:color";
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+
+
+// Container Global
+.container {
+    width: 90%;
+    max-width: 75rem; // 1200px
+    margin: 0 auto;
+}
+
+// Botões (Bloco Reutilizável)
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    @include transition-smooth;
+
+    &--primary {
+        background-color: $primary-color;
+        color: $white;
+
+        &:hover {
+            background-color: color.adjust($primary-color, $lightness: -10%);
+            transform: translateY(-3px);
+        }
+    }
+}
+
+// Cards de Serviço
+.service-card {
+    background-color: $white;
+    padding: calc($base-spacing / 2.5); // Operador matemático SASS proporcional
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+    @include transition-smooth;
+
+    &:hover {
+        transform: translateY(-0.3125rem);
+        box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+    }
+
+    &__icon {
+        font-size: 2.5rem;
+        margin-bottom: calc($base-spacing / 5); // Operador proporcional
+    }
+
+    &__title {
+        margin-bottom: 0.8rem;
+        color: $dark-color;
+    }
+
+    &__description {
+        color: $text-color;
+        font-size: 0.95rem;
+    }
+}
+
+// Cards de Depoimento
+.testimonial-card {
+    flex: 1 1 18.75rem;
+    background: $light-color;
+    padding: 2rem;
+    border-left: 0.25rem solid $primary-color;
+    border-radius: 0.25rem;
+
+    &__text {
+        font-style: italic;
+        color: $text-color;
+        margin-bottom: 1rem;
+    }
+
+    &__author {
+        color: $dark-color;
+        font-weight: 600;
+    }
+}
+
+// Elementos de Formulário
+.form {
+    flex: 1;
+    background-color: $white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+
+    &__group {
+        margin-bottom: 1.2rem;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+        color: $dark-color;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 0.0625rem solid #ddd;
+        border-radius: 0.25rem;
+        font-family: inherit;
+        font-size: 1rem;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+        }
+
+        &--textarea {
+            resize: vertical;
+        }
+    }
+}
